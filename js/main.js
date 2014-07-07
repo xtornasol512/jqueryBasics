@@ -28,8 +28,14 @@ function averiguar(cancionNum){
     }
     else if (cancionNum == 2){
         
-        $("#palabra1").removeClass("error");
-        alert( "Haz escogido la cancion 2" );
+       $( "input" ).each(function( index, element ) {
+            // element == this
+            if( $(element).val() == words[index])
+                $(element).addClass("correcta");
+            else
+                $(element).addClass("error");
+
+        });
 
     }
     else if (cancionNum == 3){
